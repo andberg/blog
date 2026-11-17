@@ -1,8 +1,9 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles.css";
 
 const { pageTitle } = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -20,18 +21,10 @@ const currentYear = new Date().getFullYear();
     <title>{pageTitle}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Texts</a>
-        <a href="#">About</a>
-      </nav>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
-    <footer>
-      <p>© {currentYear} Andrea Berglund</p>
-    </footer>
+    <Footer />
   </body>
 </html>
