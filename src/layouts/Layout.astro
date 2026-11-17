@@ -2,6 +2,7 @@
 import "../styles.css";
 
 const { pageTitle } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -11,6 +12,10 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
@@ -22,6 +27,11 @@ const { pageTitle } = Astro.props;
         <a href="#">About</a>
       </nav>
     </header>
-    <slot />
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>© {currentYear} Andrea Berglund</p>
+    </footer>
   </body>
 </html>
