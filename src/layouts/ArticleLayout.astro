@@ -1,0 +1,49 @@
+---
+import Layout from "./Layout.astro";
+
+const { title, description, pubDate } = Astro.props;
+---
+
+<Layout pageTitle={`${title} | Andrea Berglund`} description={description}>
+  <article>
+    <h1>{title}</h1>
+    <p class="ingress">{description}</p>
+    <time datetime={pubDate.toISOString()}>
+      {new Intl.DateTimeFormat("sv-SE", {
+        dateStyle: "long",
+        timeZone: "UTC",
+      }).format(pubDate)}
+    </time>
+    <slot />
+  </article>
+</Layout>
+
+<style>
+  article {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ingress {
+    font-size: 1.25rem;
+  }
+
+  time {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  article :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  article :global(pre) {
+    overflow-x: auto;
+  }
+
+  p {
+    max-width: 400ch;
+  }
+</style>

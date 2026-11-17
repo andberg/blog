@@ -1,13 +1,23 @@
-<div id="container">
-  <main>
-    <section id="hero">
-      <h1>
-        To get started, open the{" "}
-        <code>
-          <pre>src/pages</pre>
-        </code>{" "}
-        directory in your project.
-      </h1>
-    </section>
-  </main>
-</div>
+---
+import { getCollection } from "astro:content";
+import { getArticleUrl } from "../utils/article-url";
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+---
+
+<h1>Welcome</h1>
+
+<section aria-labelledby="articles-heading">
+  <h2 id="articles-heading">Articles</h2>
+  <ul>
+    {articles.map((article) => (
+      <li>
+        <a href={getArticleUrl(article.id, article.data.url)}>
+          {article.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
