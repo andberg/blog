@@ -2,6 +2,12 @@
 title: "Maten som spektakel – “On the Table” utforskar den historiska kokkonsten"
 description: "Charlotte Birnbaums passion för matkonstens ofta bortglömda hantverk är både inspirerande och smittsam. Till fika med kaffe och cocostopp bjuds jag på fascinerande berättelser om socker, inälvor, servettvikning och mycket mer. För varje samtalsämne finns det dessutom minst en bok i serien “On the Table”, som Birnbaum är redaktör för. Böcker som konstnären Christa Näher har formgivit till små konstverk i sig."
 pubDate: 2026-11-17
+contentType: interview
+language: sve
+tags:
+  - Mat
+  - Böcker
+  - Intervju
 ---
 
 Charlotte Birnbaums passion för matkonstens ofta bortglömda hantverk är både inspirerande och smittsam. Till fika med kaffe och cocostopp bjuds jag på fascinerande berättelser om socker, inälvor, servettvikning och mycket mer. För varje samtalsämne finns det dessutom minst en bok i serien “On the Table”, som Birnbaum är redaktör för. Böcker som konstnären Christa Näher har formgivit till små konstverk i sig.

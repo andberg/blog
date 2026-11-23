@@ -17,6 +17,8 @@ const articles = defineCollection({
       .optional(),
     pubDate: z.date(),
     originalPubDate: z.date().optional(),
+    contentType: z.enum(["article", "interview", "misc"]),
+    language: z.enum(["sve", "eng"]),
     tags: z.array(z.string()).optional(),
   }),
 });

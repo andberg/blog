@@ -1,11 +1,20 @@
 ---
 import Layout from "./Layout.astro";
 
-const { title, description, pubDate } = Astro.props;
+const { title, description, pubDate, language, swedishUrl } = Astro.props;
 ---
 
-<Layout pageTitle={`${title} | Andrea Berglund`} description={description}>
+<Layout
+  pageTitle={`${title} | Andrea Berglund`}
+  description={description}
+  lang={language === "sve" ? "sv" : "en"}
+>
   <article>
+    {language === "eng" && swedishUrl && (
+      <a class="language-switch" href={swedishUrl}>
+        På svenska
+      </a>
+    )}
     <h1>{title}</h1>
     <p class="ingress">{description}</p>
     <time datetime={pubDate.toISOString()}>
@@ -23,6 +32,15 @@ const { title, description, pubDate } = Astro.props;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+  }
+
+  .language-switch {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
   }
 
   .ingress {

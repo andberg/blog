@@ -1,7 +1,10 @@
 ---
 import { getCollection, render } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
-import { getArticleRouteId } from "../../utils/article-url";
+import {
+  getArticleRouteId,
+  getSiblingArticleUrl,
+} from "../../utils/article-url";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -14,11 +17,17 @@ export async function getStaticPaths() {
     .filter(({ routeId }) => routeId.includes("/"))
     .map(({ article, routeId }) => ({
       params: { id: routeId },
-      props: { article },
+      props: {
+        article,
+        swedishUrl:
+          article.data.language === "eng"
+            ? getSiblingArticleUrl(article, articles, "sve")
+            : undefined,
+      },
     }));
 }
 
-const { article } = Astro.props;
+const { article, swedishUrl } = Astro.props;
 const { Content } = await render(article);
 ---
 
@@ -26,6 +35,8 @@ const { Content } = await render(article);
   title={article.data.title}
   description={article.data.description}
   pubDate={article.data.pubDate}
+  language={article.data.language}
+  swedishUrl={swedishUrl}
 >
   <Content />
 </ArticleLayout>

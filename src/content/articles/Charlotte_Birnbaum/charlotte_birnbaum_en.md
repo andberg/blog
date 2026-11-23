@@ -2,6 +2,12 @@
 title: "Food as Spectacle – “On the Table” Explores the History of Culinary Art"
 description: "Charlotte Birnbaum’s passion for the often-forgotten crafts of culinary art is both inspiring and infectious. Over coffee and coconut macaroons, I hear fascinating stories about sugar, offal, napkin folding, and much more. Each topic has at least one book devoted to it in the “On the Table” series, edited by Birnbaum and designed as miniature works of art by artist Christa Näher."
 pubDate: 2019-11-13
+contentType: interview
+language: eng
+tags:
+  - Food
+  - Books
+  - Interview
 ---
 
 Charlotte Birnbaum’s passion for the often-forgotten crafts of culinary art is both inspiring and infectious. Over coffee and coconut macaroons, I hear fascinating stories about sugar, offal, napkin folding, and much more. Each topic has at least one book devoted to it in the “On the Table” series, edited by Birnbaum and designed as miniature works of art by artist Christa Näher.
