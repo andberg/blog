@@ -10,23 +10,37 @@ const { quote, cite, citeUrl, author } = Astro.props;
 ---
 
 <figure class="quote">
-  <blockquote cite={citeUrl}>
-    <p>{quote}</p>
-  </blockquote>
-  <figcaption>
-    — {author}, <cite>{cite}</cite>
-  </figcaption>
+  <span class="quote-line" aria-hidden="true"></span>
+  <div class="quote-inner">
+    <blockquote cite={citeUrl}>
+      <p>{quote}</p>
+    </blockquote>
+    <figcaption>
+      — {author}, <cite>{cite}</cite>
+    </figcaption>
+  </div>
 </figure>
 
 <style>
   .quote {
-    margin: 1.5rem 0;
-    padding-left: 1.25rem;
-    border-left: 2px solid var(--color-accent);
+    display: flex;
+    margin: 0;
   }
 
   blockquote {
     margin: 0;
+  }
+  .quote-inner {
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  .quote-line {
+    padding-left: 1.25rem;
+    background-image: url("../assets/line-vertical.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1rem 100%;
   }
 
   blockquote p {
