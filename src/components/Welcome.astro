@@ -2,16 +2,24 @@
 import { getCollection } from "astro:content";
 import { getArticleUrl } from "../utils/article-url";
 import ArticleCard from "./ArticleCard.astro";
+import Line from "./Line.astro";
+import Quote from "./Quote.astro";
 
 const articles = (await getCollection("articles"))
   .filter((article) => article.data.language === "eng")
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<h1>Welcome</h1>
+<Quote
+  quote="Some of the best thinking is done as storytelling."
+  cite="Story Telling for Earthly Survival (2016)"
+  citeUrl="https://www.docuseek2.com/if-donna"
+  author="Donna Haraway"
+/>
 
 <section aria-labelledby="articles-heading">
-  <h2 id="articles-heading">Articles</h2>
+  <Line />
+  <h2 id="articles-heading">Texts</h2>
   <div class="article-grid">
     {articles.map((article) => (
       <ArticleCard

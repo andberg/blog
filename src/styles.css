@@ -3,14 +3,17 @@
   --font-body: "Source Sans 3", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --font-color-body: #202B38;
-  --font-color-heading: #202B38;
+  --font-color-body: #202b38;
+  --font-color-heading: #202b38;
 
-  --background-color-primary: #F7F5F0;
+  --background-color-primary: #f7f5f0;
 
-  --color-accent: #7895AD;
+  --color-accent: #7895ad;
   --color-accent-dark: #a9c5d5;
-  --color-border: #E0E0E0;
+  --color-accent-strong: #527b9a;
+  --color-border: #e0e0e0;
+  --color-border-card: #c8cdd1;
+  --background-color-card-hover: rgb(169 197 213 / 10%);
 }
 
 * {
@@ -44,6 +47,7 @@ h6 {
   font-weight: normal;
   font-family: var(--font-heading);
   font-weight: 600;
+  line-height: 1.25;
 }
 
 h1 {
